@@ -55,7 +55,7 @@ export default function Example() {
 You can also run the example in this repo:
 
 ```
-npm run example -- "Your text here"
+npm run example -- "Your text here!"
 ```
 
 ## API
