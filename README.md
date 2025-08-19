@@ -8,7 +8,7 @@ Tiny helper to generate sentence-transformers embeddings via `@xenova/transforme
 ## Install
 
 ```
-npm install embedding-hf @xenova/transformers
+npm install embedding-hf
 ```
 
 Node 18+ is recommended for native fetch. In browsers, modern bundlers supported.
@@ -62,7 +62,7 @@ npm run example -- "Your text here!"
 
 ### generateEmbeddingHF(text: string): Promise<number[]>
 Generates a mean-pooled, L2-normalized embedding using the
-`sentence-transformers/all-MiniLM-L6-v2` model.
+`Xenova/all-MiniLM-L6-v2` model (ONNX port maintained for @xenova/transformers).
 
 ## Notes
 - The first call downloads the model (~90MB) and can take a while.

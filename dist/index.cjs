@@ -5,7 +5,7 @@ async function generateEmbeddingHF(text) {
     const { pipeline } = await import("@xenova/transformers");
     extractor = await pipeline(
       "feature-extraction",
-      "sentence-transformers/all-MiniLM-L6-v2"
+      "Xenova/all-MiniLM-L6-v2"
     );
   }
   const output = await extractor(text, { pooling: "mean", normalize: true });
