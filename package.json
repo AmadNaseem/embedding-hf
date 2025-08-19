@@ -1,0 +1,54 @@
+{
+  "name": "embedding-hf",
+  "version": "0.1.0",
+  "description": "Tiny helper to generate sentence-transformers embeddings via @xenova/transformers in Node.js and the browser.",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "browser": "dist/index.mjs",
+  "files": [
+    "dist/**",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "example": "node examples/run.js",
+    "prepublishOnly": "npm test --if-present"
+  },
+  "keywords": [
+    "embeddings",
+    "transformers",
+    "huggingface",
+    "nlp",
+    "sentence-transformers"
+  ],
+  "author": "Amad Naseem (https://github.com/AmadNaseem)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmadNaseem/embedding-hf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AmadNaseem/embedding-hf/issues"
+  },
+  "homepage": "https://github.com/AmadNaseem/embedding-hf#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "dependencies": {},
+  "peerDependencies": {
+    "@xenova/transformers": ">=2.14.0"
+  }
+}
