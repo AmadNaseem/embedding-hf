@@ -1,6 +1,6 @@
 {
   "name": "embedding-hf",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Tiny helper to generate sentence-transformers embeddings via @xenova/transformers in Node.js and the browser.",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
