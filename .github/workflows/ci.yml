@@ -1,0 +1,18 @@
+name: ci
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm pkg get name version
+      - run: node -e "try{require('./dist/index.cjs');console.log('CJS OK')}catch(e){console.error(e);process.exit(1)}"
+      - run: node --input-type=module -e "import('./dist/index.mjs').then(()=>console.log('ESM OK')).catch(e=>{console.error(e);process.exit(1)})"
