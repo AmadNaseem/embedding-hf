@@ -60,14 +60,25 @@ npm run example -- "Your text here!"
 
 ## API
 
-### generateEmbeddingHF(text: string): Promise<number[]>
-Generates a mean-pooled, L2-normalized embedding using the
-`Xenova/all-MiniLM-L6-v2` model (ONNX port maintained for @xenova/transformers).
+### generateEmbeddingHF(text: string, options?: { dimension?: number }): Promise<number[]>
+Generates a mean-pooled, L2-normalized embedding using a Xenova ONNX model.
+Returns a vector coerced to 1536 dimensions (truncated or zero-padded if needed).
+
+### generateEmbeddingHFObject(text: string, options?: { dimension?: number }): Promise<{ dimension: number; flat: string }>
+Returns an object with `dimension` (default 1536) and `flat` as a JSON string of the embedding.
+
+Example for {"dimension":1536,"flat":"..."}:
+```ts
+import { generateEmbeddingHFObject } from 'embedding-hf';
+const out = await generateEmbeddingHFObject('hello', { dimension: 1536 });
+// out => { dimension: 1536, flat: "[0.1, ...]" }
+```
 
 ## Notes
 - The first call downloads the model (~90MB) and can take a while.
 - Subsequent calls reuse the loaded pipeline.
 - Works offline after the model is cached.
+ - Default model: `Xenova/text-embedding-3-small` (override via `EMBEDDING_HF_MODEL` env).
 
 ## Contact
 
