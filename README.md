@@ -79,6 +79,7 @@ const out = await generateEmbeddingHFObject('hello', { dimension: 1536 });
 - Subsequent calls reuse the loaded pipeline.
 - Works offline after the model is cached.
  - Default model: `Xenova/all-MiniLM-L6-v2` (override via `EMBEDDING_HF_MODEL` env).
+ - When resizing embeddings, vectors are re-normalized; if upscaling, padding cycles existing values (not zeros) for speed and stability in ANN backends.
 
 ## Contact
 
