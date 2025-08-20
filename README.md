@@ -78,7 +78,7 @@ const out = await generateEmbeddingHFObject('hello', { dimension: 1536 });
 - The first call downloads the model (~90MB) and can take a while.
 - Subsequent calls reuse the loaded pipeline.
 - Works offline after the model is cached.
- - Default model: `Xenova/text-embedding-3-small` (override via `EMBEDDING_HF_MODEL` env).
+ - Default model: `Xenova/all-MiniLM-L6-v2` (override via `EMBEDDING_HF_MODEL` env).
 
 ## Contact
 

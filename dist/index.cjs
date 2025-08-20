@@ -1,7 +1,7 @@
 "use strict";
 let extractor = null;
 const TARGET_DIM = 1536;
-const DEFAULT_MODEL = process.env.EMBEDDING_HF_MODEL || "Xenova/text-embedding-3-small";
+const DEFAULT_MODEL = process.env.EMBEDDING_HF_MODEL || "Xenova/all-MiniLM-L6-v2";
 function coerceToDim(vec, dim) {
   if (vec.length === dim) return vec;
   if (vec.length > dim) return vec.slice(0, dim);
