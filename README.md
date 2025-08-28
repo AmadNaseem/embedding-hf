@@ -8,7 +8,7 @@ Tiny helper to generate sentence-transformers embeddings via `@xenova/transforme
 ## Install
 
 ```
-npm install embedding-hf
+npm install embedding-hf 
 ```
 
 Node 18+ is recommended for native fetch. In browsers, modern bundlers supported.
